@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class Button : Widget
 {
-    
-    public bool inFocus = false;
+
+    public GameObject canvasToInstantiate;
 
     private void Start()
     {
@@ -49,6 +49,8 @@ public class Button : Widget
         }
         
     }
+
+
 
     
 

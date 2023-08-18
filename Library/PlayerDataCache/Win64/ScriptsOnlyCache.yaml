@@ -3,8 +3,13 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Banner
     - Button
+    - Calibrate
+    - Home
     - InteractionManager
+    - Map
     - RunKiosk
+    - Search
+    - Slider_control
     - StartScreen
     Ultraleap.Tracking.Core.dll:
     - Leap.Unity.LeapServiceProvider
@@ -29,6 +34,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Shadow
+    - UnityEngine.UI.Slider
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -53,9 +59,63 @@ ScriptsOnlyBuild:
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.Slider/SliderEvent
+    - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
+    Assets/Scenes/Calibration.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1646}
+    - Class: 114
+      Script: {instanceID: 2704}
+    - Class: 114
+      Script: {instanceID: 2916}
+    - Class: 114
+      Script: {instanceID: 5692}
+    - Class: 114
+      Script: {instanceID: 5878}
+    - Class: 114
+      Script: {instanceID: 6368}
+    - Class: 114
+      Script: {instanceID: 24642}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Portrait.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -86,43 +146,53 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1562}
+      Script: {instanceID: 1598}
     - Class: 114
-      Script: {instanceID: 1564}
+      Script: {instanceID: 1600}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1624}
     - Class: 114
-      Script: {instanceID: 1610}
+      Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 2220}
+      Script: {instanceID: 2256}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2746}
     - Class: 114
-      Script: {instanceID: 4106}
+      Script: {instanceID: 2916}
     - Class: 114
-      Script: {instanceID: 4228}
+      Script: {instanceID: 3758}
     - Class: 114
-      Script: {instanceID: 4348}
+      Script: {instanceID: 4074}
     - Class: 114
-      Script: {instanceID: 4420}
+      Script: {instanceID: 4148}
     - Class: 114
-      Script: {instanceID: 4496}
+      Script: {instanceID: 4272}
     - Class: 114
-      Script: {instanceID: 5240}
+      Script: {instanceID: 4392}
     - Class: 114
-      Script: {instanceID: 5648}
+      Script: {instanceID: 4464}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 4540}
     - Class: 114
-      Script: {instanceID: 5994}
+      Script: {instanceID: 5204}
     - Class: 114
-      Script: {instanceID: 6322}
+      Script: {instanceID: 5284}
     - Class: 114
-      Script: {instanceID: 7414}
+      Script: {instanceID: 5692}
     - Class: 114
-      Script: {instanceID: 8090}
+      Script: {instanceID: 5814}
+    - Class: 114
+      Script: {instanceID: 5878}
+    - Class: 114
+      Script: {instanceID: 6040}
+    - Class: 114
+      Script: {instanceID: 6368}
+    - Class: 114
+      Script: {instanceID: 7460}
+    - Class: 114
+      Script: {instanceID: 8136}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -382,6 +452,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionEnterMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 008c741218fbf7fafacf0375e5c208db
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Slider_control
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -622,6 +698,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Map
+  - hash:
+      serializedVersion: 2
       Hash: 87c7a8622991bedeffd96f262ad7ec43
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -680,6 +762,12 @@ ScriptsOnlyBuild:
     assemblyName: Ultraleap.Tracking.Core.dll
     namespaceName: Leap.Unity
     className: PalmDirectionDetector
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Search
   - hash:
       serializedVersion: 2
       Hash: 6f9012002246779d42b39fac091bba84
@@ -1034,6 +1122,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark02
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Home
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -1450,7 +1544,7 @@ ScriptsOnlyBuild:
     className: IgnoreColliderForInteraction
   - hash:
       serializedVersion: 2
-      Hash: 7e0cfeeb17dc338d05d941bbd533bd04
+      Hash: 7306ca40c95157f77e059d307c8c8b13
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Button
@@ -1484,7 +1578,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 93c04e2c8af6e4b5cfecd77c9c466e08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Calibrate
   platform: 19
   scenePathNames:
   - Assets/Scenes/Portrait.unity
-  playerPath: D:/Projects/Gain-Experiment/Glasgow Kiosk/Build/Glasgow Kiosk.exe
+  - Assets/Scenes/Calibration.unity
+  playerPath: D:/Projects/Glasgow Kiosk/Build/Glasgow Kiosk.exe

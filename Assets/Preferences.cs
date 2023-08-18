@@ -5,10 +5,14 @@ using UnityEngine;
 public static class Preferences
 {
     public static InteractionType interactionType;
-    public static bool proxemic = false;
+    public static bool proxemic = true;
+    public static GameObject activeCanvas;
+    public static List<PointOfInterest> pointsOfInterest;
+    public static bool calibrated = false;
+    public static Vector3 top, bottom, left, right;
 
 
-    public static GameObject Closest(GameObject[] widgets, GameObject cursor)
+    public static GameObject Closest(List<GameObject> widgets, GameObject cursor)
     {
         GameObject closetsObject = cursor;
         float oldDistance = 9999;

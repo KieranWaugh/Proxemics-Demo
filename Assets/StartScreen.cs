@@ -14,6 +14,7 @@ public class StartScreen : MonoBehaviour
     private void OnEnable()
     {
         im = GetComponentInParent<InteractionManager>();
+        Preferences.activeCanvas = gameObject;
     }
     void Start()
     {
@@ -23,8 +24,7 @@ public class StartScreen : MonoBehaviour
     {
         if (Preferences.proxemic)
         {
-            var closest = Preferences.Closest(GameObject.FindGameObjectsWithTag("Widget"), im.cursor);
-            closest.GetComponent<Widget>().onFocus?.Invoke(closest);
+            
 
            
         }
@@ -37,8 +37,8 @@ public class StartScreen : MonoBehaviour
     {
         if(startButton.GetComponent<Button>().inFocus && im.isGesture)
         {
-            home.SetActive(true) ;
-            gameObject.SetActive(false) ;
+            //home.SetActive(true) ;
+            //gameObject.SetActive(false) ;
         }
     }
 }
