@@ -8,7 +8,7 @@ public class RunKiosk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!Preferences.calibrated)
+        if (!Preferences.calibrated && Preferences.interactionType != InteractionType.Debug)
         {
             SceneManager.LoadScene("Calibration");
         }

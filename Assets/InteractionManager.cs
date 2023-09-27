@@ -89,17 +89,21 @@ public class InteractionManager : MonoBehaviour
         {
             FocusedWidget.GetComponent<Widget>().onTrigger?.Invoke(FocusedWidget);
             activeWidget = FocusedWidget;
-
+            print(FocusedWidget.GetComponent<Widget>().name);
             if(FocusedWidget.GetComponent<Widget>().type == WidgetType.Button)
             {
+                
                 var canv = FocusedWidget.GetComponent<Button>().canvasToInstantiate;
                 Preferences.activeCanvas.SetActive(false);
                 canv.SetActive(true);
+                FocusedWidget = null;
+                FocusedWidget.GetComponent<Widget>().onTrigger?.Invoke(FocusedWidget);
+                
             }
             else
             {
                 
-                FocusedWidget.GetComponent<Slider_control>().MoveSlider();
+                FocusedWidget.GetComponent<Slider_control>().MoveSlider(cursor);
             }
 
             
@@ -114,7 +118,8 @@ public class InteractionManager : MonoBehaviour
 
         if (activeWidget != null)
         {
-            FocusedWidget.GetComponent<Widget>().onUnTrigger?.Invoke(FocusedWidget);
+            //FocusedWidget.GetComponent<Widget>().onUnTrigger?.Invoke(FocusedWidget);
+            
             activeWidget = null;
         }
         
@@ -141,6 +146,8 @@ public class InteractionManager : MonoBehaviour
                         
                         widget.gameObject.GetComponent<Widget>().onFocus += onWIdgetFocus;
                         widget.gameObject.GetComponent<Widget>().onUnFocus += onWIdgetUnFocus;
+                        widget.gameObject.GetComponent<Widget>().onTrigger += onWidgetActivate;
+                        widget.gameObject.GetComponent<Widget>().onUnTrigger += onWidgetUnActivate;
                     }
                 }
             }
@@ -157,6 +164,7 @@ public class InteractionManager : MonoBehaviour
 
         var closest = Preferences.Closest(widgets, cursor);
         closest.GetComponent<Widget>().setFocus(true);
+        closest.GetComponent<Widget>().onFocus?.Invoke(closest);
         FocusedWidget = closest;
 
         
@@ -165,16 +173,24 @@ public class InteractionManager : MonoBehaviour
     private void onWIdgetFocus(GameObject b)
     {
        // b.GetComponentInChildren<Outline>().enabled = true;
+       FocusedWidget = b;
     }
 
     private void onWIdgetUnFocus(GameObject b)
     {
         //b.GetComponentInChildren<Outline>().enabled = false ;
+        //FocusedWidget = null;
     }
 
     private void onWidgetActivate(GameObject b)
     {
+        print("here " + b.GetComponent<Widget>().name);
+        b.GetComponent<Widget>().active = true;
+    }
 
+    private void onWidgetUnActivate(GameObject b)
+    {
+        b.GetComponent<Widget>().active = true;
     }
 
 

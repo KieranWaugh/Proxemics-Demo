@@ -10,6 +10,7 @@ public abstract class Widget : MonoBehaviour
     [SerializeField] protected GameObject cursor;
     public WidgetType type;
     public bool inFocus = false;
+    public bool active = false;
     // Start is called before the first frame update
     void Start()
     {
