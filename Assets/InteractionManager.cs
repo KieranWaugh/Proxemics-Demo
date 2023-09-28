@@ -97,7 +97,10 @@ public class InteractionManager : MonoBehaviour
                 Preferences.activeCanvas.SetActive(false);
                 canv.SetActive(true);
                 FocusedWidget = null;
-                FocusedWidget.GetComponent<Widget>().onTrigger?.Invoke(FocusedWidget);
+                if(Preferences.proxemic){
+                    FocusedWidget.GetComponent<Widget>().onTrigger?.Invoke(FocusedWidget);
+
+                }
                 
             }
             else
@@ -184,7 +187,7 @@ public class InteractionManager : MonoBehaviour
 
     private void onWidgetActivate(GameObject b)
     {
-        print("here " + b.GetComponent<Widget>().name);
+       // print("here " + b.GetComponent<Widget>().name);
         b.GetComponent<Widget>().active = true;
     }
 

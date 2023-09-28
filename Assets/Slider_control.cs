@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class Slider_control : Widget
 {
     // Start is called before the first frame update
-    public float cPosPrev = 0;
-    private float sliderState;
+    public Vector3 cPosPrev =  Vector3.zero;
     public Vector3 GestureLocation;
     public bool firstActivate = true;
+    private Vector3 sliderState;
     void Start()
     {
         type = WidgetType.Slider;
@@ -105,10 +105,30 @@ public class Slider_control : Widget
     // }
 
 public void MoveSlider(GameObject cursor){
-    
+    print(active);
     if(active){
-        cusor_loc = cursor.GetComponent<RectTransform>().position;
-        slider_loc = GameObject.Find("UI_Slider/Handle Slide Area/Handle").GetComponent<RectTransform>().position;
+        var cusor_loc = cursor.GetComponent<RectTransform>().position;
+        var slider_loc = GameObject.Find("Slider/Handle Slide Area/Handle").GetComponent<RectTransform>().position;
+        var handle = gameObject.transform.Find("Slider/Handle Slide Area/Handle");
+        
+        if (firstActivate)
+        {
+            GestureLocation = cusor_loc;
+            sliderState = slider_loc;
+            firstActivate = false;
+            cPosPrev = cusor_loc;
+        }
+
+        if(Preferences.proxemic){
+            
+            if(cusor_loc != cPosPrev){
+                if(cusor_loc.y > cPosPrev.y){
+                handle.position = new Vector3(handle.position.x, sliderState.y - Mathf.Abs(cusor_loc.y - GestureLocation.y), 0);
+                }else{
+                    handle.position = new Vector3(handle.position.x, sliderState.y + Mathf.Abs(cusor_loc.y - GestureLocation.y), 0);
+                }
+            }
+        }
 
         
     }

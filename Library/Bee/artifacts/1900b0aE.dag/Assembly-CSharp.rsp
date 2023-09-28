@@ -358,6 +358,7 @@
 "Assets/Home.cs"
 "Assets/InteractionManager.cs"
 "Assets/Map.cs"
+"Assets/POICard.cs"
 "Assets/PointOfInterest.cs"
 "Assets/Preferences.cs"
 "Assets/RunKiosk.cs"
